@@ -8,7 +8,9 @@ namespace OnboardingExperience
         {
             Console.WriteLine("Hello and Welcome to Privateporkers National Bank");
 
-            QuestionAnswer("What is your First name?", "Your first name is: ");
+            QuestionAnswer("What is your first name?", "Your first name is: ");
+             QuestionAnswer("What is your last name?", "Your last name is: ");
+
 
         }
 
