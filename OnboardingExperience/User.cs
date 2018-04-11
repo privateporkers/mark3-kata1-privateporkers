@@ -2,11 +2,9 @@ using System;
 
 namespace OnboardingExperience
 {
-    class User
+    public class User
     {
-        public static void UserStore()
-        {
-
-        }
+        public string FirstName{ get; set; }
+        public string LastName{ get; set; }
     }
 }

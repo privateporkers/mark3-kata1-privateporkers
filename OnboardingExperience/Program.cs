@@ -3,22 +3,31 @@
 namespace OnboardingExperience
 {
     class Program
-    {
+   {
+       
         static void Main(string[] args)
         {
+            var user = new User();
+
             Console.WriteLine("Hello and Welcome to Privateporkers National Bank");
 
-            QuestionAnswer("What is your first name?", "Your first name is: ");
-             QuestionAnswer("What is your last name?", "Your last name is: ");
+            //asks the user for there first name then there last. Out putting both first and last name
+            user.FirstName = AskQuestion("What is your first name?");
+            user.LastName = AskQuestion("what is your last name?");
+            Console.WriteLine($"You name is: {user.FirstName} {user.LastName}");
+            Console.Clear();
+
+
 
 
         }
 
-        public static void QuestionAnswer(string question, string response)
+        
+        public static string AskQuestion(string question)
         {
-           Console.WriteLine(question);
-          var read = Console.ReadLine();
-          Console.WriteLine(response + read);
+            Console.WriteLine(question);
+            return Console.ReadLine();
+
         }
     }
 }
