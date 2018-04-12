@@ -36,7 +36,6 @@ namespace OnboardingExperience
             user.AcountOwner = IsAccountOwner("Are you the account owner? ");
 
             user.Pin = PinLogin();
-            //asks the user for there first name then there last. Out putting both first and last name
             user.FirstName = AskQuestion("What is your first name?");
             user.LastName = AskQuestion("what is your last name?");
             user.age = IntQuestion("What is your age?");
