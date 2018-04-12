@@ -6,7 +6,8 @@ namespace OnboardingExperience
     {
         public string FirstName{ get; set; }
         public string LastName{ get; set; }
-
         public int age{ get; set; }
+        public bool AcountOwner{ get; set;}
+        public int Pin{ get; set; }
     }
 }

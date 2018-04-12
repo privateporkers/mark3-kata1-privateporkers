@@ -8,12 +8,34 @@ namespace OnboardingExperience
         static void Main(string[] args)
         {
             var user = new User();
-            var gumby = new TermArt();
-
+            Console.WriteLine(@"
+                      _.-,
+         __.'   |   .,
+       ,'_   _  | :` ;
+       |'_` '_`|' : ,'
+       |(o) (o)|  ; ;
+       `|  A  |'  ; ;
+     _..| `-' |..'.'
+   .'.--.     .--'
+ .'.'   |     |
+ | :    |     |
+ : |    |     |
+ `.`.   ;     :
+   `'   Y  .  Y
+        |  |  |
+        |  |  |
+        ;  |  :
+       /   |   \
+      ;    |    :
+     /_____|_____\
+            ");
             Console.WriteLine("╔═══════════════════════════════════════════════╗");
             Console.WriteLine("Hello and Welcome to Privateporkers National Bank");
             Console.WriteLine("╚═══════════════════════════════════════════════╝");
 
+            user.AcountOwner = IsAccountOwner("Are you the account owner? ");
+
+            user.Pin = PinLogin();
             //asks the user for there first name then there last. Out putting both first and last name
             user.FirstName = AskQuestion("What is your first name?");
             user.LastName = AskQuestion("what is your last name?");
@@ -40,6 +62,31 @@ namespace OnboardingExperience
             }
 
             return num;
+
+        }
+
+        public static int PinLogin()
+       {
+
+            var pin = IntQuestion("What is your Pin: ");
+            var pinConfirm = IntQuestion("Confirm your pin: ");
+
+            while(pinConfirm != pin)
+            {
+                Console.WriteLine("The pins do not match, please try again");
+            }
+
+            return pinConfirm;
+
+        }
+
+        public static bool  IsAccountOwner(string answer)
+        {
+            AskQuestion("Are you the account owner? (y/n)");
+           if(answer == "y"){
+               return true ;
+           }
+               return false;
 
         }
     }
