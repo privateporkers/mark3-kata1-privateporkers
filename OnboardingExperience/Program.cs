@@ -38,9 +38,9 @@ namespace OnboardingExperience
             user.Pin = PinLogin();
             user.FirstName = AskQuestion("What is your first name?");
             user.LastName = AskQuestion("what is your last name?");
-            user.age = IntQuestion("What is your age?");
+            user.Age = IntQuestion("What is your age?");
 
-            Console.WriteLine($"You name is: {user.FirstName} {user.LastName} and your age is: {user.age}");
+            Console.WriteLine($"You name is: {user.FirstName} {user.LastName} and your age is: {user.Age}");
         }
         public static string AskQuestion(string question)
         {
@@ -79,11 +79,21 @@ namespace OnboardingExperience
 
         public static bool  IsAccountOwner(string answer)
         {
-            AskQuestion("Are you the account owner? (y/n)");
-           if(answer == "y"){
-               return true ;
-           }
-               return false;
+            var AccountAnswer = AskQuestion("Are you the account owner? (y/n)");
+
+            if(AccountAnswer == "y"){
+                return true;
+            }
+            else if(AccountAnswer == "n"){
+                return false;
+            }
+            else{
+                while(AccountAnswer != "y" || AccountAnswer!= "n"){
+                    Console.WriteLine("Error: please type y or n");
+                }
+            }
+
+               return true;
 
         }
     }
