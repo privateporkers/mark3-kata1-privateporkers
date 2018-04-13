@@ -79,21 +79,17 @@ namespace OnboardingExperience
 
         public static bool  IsAccountOwner(string answer)
         {
-            var AccountAnswer = AskQuestion("Are you the account owner? (y/n)");
+            while(true)
+            {
+                var AccountAnswer = AskQuestion("Are you the account owner? (y/n)");
+                if(AccountAnswer == "y"){return true;}
+                else if(AccountAnswer == "n"){return false;}
 
-            if(AccountAnswer == "y"){
-                return true;
-            }
-            else if(AccountAnswer == "n"){
-                return false;
-            }
-            else{
-                while(AccountAnswer != "y" || AccountAnswer!= "n"){
-                    Console.WriteLine("Error: please type y or n");
-                }
+                else{Console.WriteLine("ERROR: please type either 'y' or 'n' ");}
+
+
             }
 
-               return true;
 
         }
     }
