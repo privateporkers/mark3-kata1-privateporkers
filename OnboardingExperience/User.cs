@@ -9,5 +9,13 @@ namespace OnboardingExperience
         public int Age { get; set; }
         public bool AcountOwner { get; set;}
         public int Pin { get; set; }
+
+        public static void GetMethods()
+        {
+
+            
+
+        }
     }
+
 }

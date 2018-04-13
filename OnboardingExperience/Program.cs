@@ -43,6 +43,7 @@ namespace OnboardingExperience
             user.Pin = PinLogin();
 
             Console.WriteLine($"You name is: {user.FirstName} {user.LastName} and your age is: {user.Age}");
+            AskQuestion("Press Enter to continue...");
 
             ExtraInfo();
         }
@@ -63,22 +64,20 @@ namespace OnboardingExperience
             }
 
             return num;
-
         }
 
         public static int PinLogin()
         {
-
             while(true)
               {
                 var pin = IntQuestion("What is your Pin: ");
                 var pinConfirm = IntQuestion("Confirm your pin: ");
-                if(pinConfirm != pin)
+                if( pinConfirm != pin )
                     {
                         Console.WriteLine("The pins do not match, please try again");
                         continue;
                     }
-                else if(pinConfirm == pin)
+                else if( pinConfirm == pin )
                     return pinConfirm;
               }
 
@@ -89,25 +88,24 @@ namespace OnboardingExperience
             while(true)
             {
                 var AccountAnswer = AskQuestion("Are you the account owner? (y/n)");
-                if(AccountAnswer == "y"){return true;}
-                else if(AccountAnswer == "n"){return false;}
 
-                else{Console.WriteLine("ERROR: please type either 'y' or 'n' ");}
+                if (AccountAnswer == "y") { return true; }
+                else if (AccountAnswer == "n") { return false; }
+
+                Console.WriteLine("ERROR: please type either 'y' or 'n' ");
             }
-
-
         }
 
         public static void ExtraInfo()
         {
             Console.Clear();
             Console.WriteLine("Now That were done with the General information, lets get some");
+
             AskQuestion("What is your mothers maden name?");
             AskQuestion("Alrighty, now what is your social security number?");
             AskQuestion("Confirm your social security");
+
             Console.WriteLine("Now we have everything, so uuuh, we'll be back in touch soon...");
-
-
         }
     }
 }
